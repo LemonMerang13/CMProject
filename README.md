@@ -1,3 +1,91 @@
 # CMProject
 Wireless Vibration Monitoring of Table Fan
-hello
+
+Problem Statement:
+
+Rotationary machines are important components in various industrial application and their reliability directly affects the productivity, efficiency, safety and maintenance costs for said application. Condition Monitoring is an effective form of predictive maintenance that allows for operational faults and reliability issues to be detected far earlier before failure occurs. One of the most used and effective techniques is vibration monitoring which monitors the characteristics of the vibration signal. This form of condition monitoring allows for detection of mechanical issues such as imbalance, misalignment, bearing defects, or looseness through changes in vibration profile.
+
+Aim:
+
+Develop a low-cost, wireless sensor system to monitor vibration levels in a table fan and detect early faults such as unbalance or blade misalignment.
+
+Objectives:
+
+1. Develop hardware design for a wireless monitoring system for vibration analysis of a fan
+2. Obtain data from vibration signal using the monitoring system
+3. Convert Vibration Signal to FFT diagram
+4. Identify key alert features for alarm detection
+5. Send necessary data to cloud dashboard for alarm detection
+6. Design wireless alert system with cloud dashboard
+7. Upload code and project on GitHub
+
+
+
+Hardware Design 
+
+Components:
+ESP8266 Microcontroller: Processes vibration data and enables Wi-Fi connectivity.
+MPU6050 Accelerometer: Measures 3-axis vibrations from the table fan
+
+Setup:
+1. Components are connected as shown in the schematics below.
+2. Both components are placed on the top of motor of the fan.
+3. The use of mobile hotspot allows the ESP8266 to connect with thingspeak
+4. All of the code is compiled and uploaded to the ESP8266
+
+Testing parameters:
+Test 1: Obtain values of normal fan operation
+Test 2: Add two weights shift centre mass leading to unbalance
+The values of Test 1 are obtained and compared to test 2. 
+
+
+
+FFT Analysis
+
+FFT Analysis:
+Implemented using Arduino FFT library on ESP8266 for edge-based processing.
+Detects unbalance at 1x RPM (15Hz) and impulsive vibrations (e.g., bearing wear).
+
+Healthy Fan:
+Low amplitude at 1x RPM, smooth spectrum with minimal harmonics.
+RMS vibration: ********.
+
+Faulty Fan (Unbalance):
+Prominent peak at 1x RPM due to unbalanced blades.
+RMS vibration: ********* (triggers warning).
+
+Visual:
+Graph comparing FFT spectra (healthy vs. unbalanced table fan).
+Annotations highlighting 1x RPM peak and RMS thresholds.
+
+
+Cloud Dashboard 
+
+Platform: ThingSpeak (free IoT platform with prebuilt visualization tools).
+
+Features:
+Real-time display of vibration trends (RMS, peak frequencies).
+Alerts via Telegram Bot (UTMCM_ExcessiveVibrationbot)
+
+Implementation:
+Vibration data streamed from ESP8266 to ThingSpeak via MQTT.
+Charts display RMS levels, FFT peaks, and fault indicators specific to the table fan.
+
+Dashboard Screenshots
+
+
+Project Outcomes 
+
+Achievements:
+Developed a wireless sensor system for real-time vibration monitoring of a table fan.
+Implemented FFT-based fault detection for unbalance and bearing issues.
+Created a cloud dashboard with trends and automated alerts.
+
+Deliverables:
+GitHub Repository: [Insert GitHub Link]
+YouTube Video: [Insert Unlisted YouTube Link]
+Dataset: Sample vibration logs uploaded to GitHub.
+
+
+
+
