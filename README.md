@@ -24,8 +24,8 @@ Objectives:
 Hardware Design 
 
 Components:
-ESP8266 Microcontroller: Processes vibration data and enables Wi-Fi connectivity.
-MPU6050 Accelerometer: Measures 3-axis vibrations from the table fan
+- ESP8266 Microcontroller: Processes vibration data and enables Wi-Fi connectivity.
+- MPU6050 Accelerometer: Measures 3-axis vibrations from the table fan
 
 Setup:
 1. Components are connected as shown in the schematics below.
@@ -33,58 +33,61 @@ Setup:
 3. The use of mobile hotspot allows the ESP8266 to connect with thingspeak
 4. All of the code is compiled and uploaded to the ESP8266
 
+
+![Image Alt](https://github.com/LemonMerang13/CMProject/blob/fe528930fbd449e20efc4304881bf3bcbc555854/WhatsApp%20Image%202025-06-02%20at%2019.44.19.jpeg)
+
 Testing parameters:
-Test 1: Obtain values of normal fan operation
-Test 2: Add two weights shift centre mass leading to unbalance
-The values of Test 1 are obtained and compared to test 2. 
+- Test 1: Obtain values of normal fan operation
+- Test 2: Add two weights shift centre mass leading to unbalance
+- The values of Test 1 are obtained and compared to test 2. 
 
-
+![Image Alt](https://github.com/LemonMerang13/CMProject/blob/fe528930fbd449e20efc4304881bf3bcbc555854/Fan%20image.png)
 
 FFT Analysis
 
 FFT Analysis:
-Implemented using Arduino FFT library on ESP8266 for edge-based processing.
-Detects unbalance at 1x RPM (15Hz) and impulsive vibrations (e.g., bearing wear).
+- Implemented using Arduino FFT library on ESP8266 for edge-based processing.
+- Detects unbalance at 1x RPM (15Hz) and impulsive vibrations (e.g., bearing wear).
 
 Healthy Fan:
-Low amplitude at 1x RPM, smooth spectrum with minimal harmonics.
-RMS vibration: ********.
+- Low amplitude at 1x RPM, smooth spectrum with minimal harmonics.
+- RMS vibration: ********.
 
 Faulty Fan (Unbalance):
-Prominent peak at 1x RPM due to unbalanced blades.
-RMS vibration: ********* (triggers warning).
+- Prominent peak at 1x RPM due to unbalanced blades.
+- RMS vibration: ********* (triggers warning).
 
 Visual:
-Graph comparing FFT spectra (healthy vs. unbalanced table fan).
-Annotations highlighting 1x RPM peak and RMS thresholds.
+
 
 
 Cloud Dashboard 
-
-Platform: ThingSpeak (free IoT platform with prebuilt visualization tools).
+- Platform: ThingSpeak (free IoT platform with prebuilt visualization tools).
 
 Features:
-Real-time display of vibration trends (RMS, peak frequencies).
-Alerts via Telegram Bot (UTMCM_ExcessiveVibrationbot)
+- Real-time display of vibration trends (RMS, peak frequencies).
+- Alerts via Telegram Bot (UTMCM_ExcessiveVibrationbot)
 
 Implementation:
-Vibration data streamed from ESP8266 to ThingSpeak via MQTT.
-Charts display RMS levels, FFT peaks, and fault indicators specific to the table fan.
+- Vibration data streamed from ESP8266 to ThingSpeak via MQTT.
+- Charts display RMS levels, FFT peaks, and fault indicators specific to the table fan.
 
 Dashboard Screenshots
+
+![Image Alt](https://github.com/LemonMerang13/CMProject/blob/fe528930fbd449e20efc4304881bf3bcbc555854/WhatsApp%20Image%202025-06-29%20at%2011.18.31.jpeg)
 
 
 Project Outcomes 
 
 Achievements:
-Developed a wireless sensor system for real-time vibration monitoring of a table fan.
-Implemented FFT-based fault detection for unbalance and bearing issues.
-Created a cloud dashboard with trends and automated alerts.
+- Developed a wireless sensor system for real-time vibration monitoring of a table fan.
+- Implemented FFT-based fault detection for unbalance and bearing issues.
+- Created a cloud dashboard with trends and automated alerts.
 
 Deliverables:
-GitHub Repository: [Insert GitHub Link]
-YouTube Video: [Insert Unlisted YouTube Link]
-Dataset: Sample vibration logs uploaded to GitHub.
+- GitHub Repository: [Insert GitHub Link]
+- YouTube Video: [Insert Unlisted YouTube Link]
+- Dataset: Sample vibration logs uploaded to GitHub.
 
 
 
