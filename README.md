@@ -90,7 +90,7 @@ Alert System
 - Threshhold: RMS value > 0.6
 - Once alarm values are above threshold, arduino send message to Telegram Bot
   
-![Image Alt]()
+![Image Alt](https://github.com/LemonMerang13/CMProject/blob/649f65e3bd08b0440d8012ff90e8d861505c64e5/Pictures%20and%20Videos%20for%20CM%20Project/Alert%20Notification.jpg)
 
 Project Outcomes 
 
