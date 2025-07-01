@@ -34,31 +34,40 @@ Setup:
 4. All of the code is compiled and uploaded to the ESP8266
 
 
-![Image Alt](https://github.com/LemonMerang13/CMProject/blob/fe528930fbd449e20efc4304881bf3bcbc555854/WhatsApp%20Image%202025-06-02%20at%2019.44.19.jpeg)
+![Image Alt](https://github.com/LemonMerang13/CMProject/blob/c897ff6fcd6be3197ff1dd9acc242b8a4f2280ba/Pictures%20and%20Videos%20for%20CM%20Project/Circuit%20Schematics.jpeg)
 
 Testing parameters:
 - Test 1: Obtain values of normal fan operation
-- Test 2: Add two weights shift centre mass leading to unbalance
+- Test 2: Add weight shift centre mass leading to unbalance
 - The values of Test 1 are obtained and compared to test 2. 
 
-![Image Alt](https://github.com/LemonMerang13/CMProject/blob/fe528930fbd449e20efc4304881bf3bcbc555854/Fan%20image.png)
+![Image Alt](https://github.com/LemonMerang13/CMProject/blob/c897ff6fcd6be3197ff1dd9acc242b8a4f2280ba/Pictures%20and%20Videos%20for%20CM%20Project/Fan%20image.png)
 
 FFT Analysis
 
 FFT Analysis:
 - Implemented using Arduino FFT library on ESP8266 for edge-based processing.
+- Data received is transferred to and plotted on excel
 - Detects unbalance at 1x RPM (15Hz) and impulsive vibrations (e.g., bearing wear).
 
 Healthy Fan:
 - Low amplitude at 1x RPM, smooth spectrum with minimal harmonics.
-- RMS vibration: ********.
+- RMS vibration: 0.4.
 
 Faulty Fan (Unbalance):
 - Prominent peak at 1x RPM due to unbalanced blades.
-- RMS vibration: ********* (triggers warning).
+- RMS vibration: more than 1.5 of Healthy Fan RMS (0.6) (triggers warning).
 
 Visual:
 
+Healthy:
+
+![Image Alt](https://github.com/LemonMerang13/CMProject/blob/c897ff6fcd6be3197ff1dd9acc242b8a4f2280ba/Pictures%20and%20Videos%20for%20CM%20Project/Healthy%20Reading.jpg)
+
+
+Faulty:
+
+![Image Alt](https://github.com/LemonMerang13/CMProject/blob/c897ff6fcd6be3197ff1dd9acc242b8a4f2280ba/Pictures%20and%20Videos%20for%20CM%20Project/Faulty%20Reading.jpg)
 
 
 Cloud Dashboard 
@@ -74,7 +83,15 @@ Implementation:
 
 Dashboard Screenshots
 
-![Image Alt](https://github.com/LemonMerang13/CMProject/blob/fe528930fbd449e20efc4304881bf3bcbc555854/WhatsApp%20Image%202025-06-29%20at%2011.18.31.jpeg)
+![Image Alt](https://github.com/LemonMerang13/CMProject/blob/c897ff6fcd6be3197ff1dd9acc242b8a4f2280ba/Pictures%20and%20Videos%20for%20CM%20Project/ThingSpeak%20Dashboard.jpg)
+
+Alert System
+- Telegram Bot (MyLABAlertBot)
+- Threshhold: RMS value > 0.6
+- Once alarm values are above threshold, arduino send message to Telegram Bot
+
+Visual
+
 
 
 Project Outcomes 
