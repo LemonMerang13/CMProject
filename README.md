@@ -100,7 +100,7 @@ Achievements:
 - Created a cloud dashboard with trends and automated alerts.
 
 Deliverables:
-- GitHub Repository: [Insert GitHub Link]
+- GitHub Repository: [https://github.com/LemonMerang13/CMProject/tree/main]
 - YouTube Video: [Insert Unlisted YouTube Link]
 - Dataset: Sample vibration logs uploaded to GitHub.
 
