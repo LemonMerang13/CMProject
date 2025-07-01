@@ -89,10 +89,8 @@ Alert System
 - Telegram Bot (MyLABAlertBot)
 - Threshhold: RMS value > 0.6
 - Once alarm values are above threshold, arduino send message to Telegram Bot
-
-Visual
-
-
+  
+![Image Alt]()
 
 Project Outcomes 
 
